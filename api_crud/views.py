@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import usuario
-from .serializer import usuarioSerializer
+from .serializer import usuarioSerializer, usuarioSerializerList
 from drf_yasg.utils import swagger_auto_schema
 # Create your views here.
 
@@ -19,5 +19,5 @@ class crudUsuarioViewSet(viewsets.ModelViewSet):
 
     def list(self, request):
         data = usuario.objects.all()
-        serializer = usuarioSerializer(data, many=True)
+        serializer = usuarioSerializerList(data, many=True)
         return Response(serializer.data)
