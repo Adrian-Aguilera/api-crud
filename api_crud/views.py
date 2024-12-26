@@ -28,3 +28,17 @@ class  EjerciciosViews(APIView):
             return Response({'errors':{
                 'error': 'Metodo no permitido'
             }})
+
+    @api_view(['POST'])
+    def fizzbuzz(request):
+        if request.method == 'POST':
+            data = request.data
+            numero = data.get('max_numero')
+            if numero:
+                return Response({'resultado': {'mensaje': Methods.fizzbuzz(numero)}})
+            else:
+                return Response({'error': 'No se ha introducido el numero'})
+        else:
+            return Response({'errors':{
+                'error': 'Metodo no permitido'
+            }})

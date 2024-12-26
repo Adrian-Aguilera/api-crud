@@ -4,3 +4,12 @@ class Methods:
         respuesta = nombre.lower() == nombre[::-1].lower()
         print(respuesta)
         return respuesta
+
+    def fizzbuzz(max_numero:int):
+        '''fizzbuzz'''
+        if not max_numero:
+            return 'El numero no puede ser 0'
+        else:
+            numero = ['fizz' if numero % 3 == 0 else 'buzz' if numero % 5 == 0 else 'fizzbuzz' if numero % 3 == 0 and numero % 5 == 0 else numero  for numero in range(max_numero)]
+            print(numero)
+            return {'numero': numero}
