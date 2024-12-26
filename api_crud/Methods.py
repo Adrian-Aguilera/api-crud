@@ -11,5 +11,4 @@ class Methods:
             return 'El numero no puede ser 0'
         else:
             numero = ['fizz' if numero % 3 == 0 else 'buzz' if numero % 5 == 0 else 'fizzbuzz' if numero % 3 == 0 and numero % 5 == 0 else numero  for numero in range(max_numero)]
-            print(numero)
             return {'numero': numero}
