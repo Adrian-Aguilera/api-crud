@@ -1,7 +1,9 @@
-from .views import crudUsuarioViewSet
+from .views import crudUsuarioViewSet, EjerciciosViews
 from rest_framework.routers import DefaultRouter
-
-urlpatterns = []
+from django.urls import path
+urlpatterns = [
+    path('palindromo', EjerciciosViews.isPalindromo, name='isPalindromo'),
+]
 
 router = DefaultRouter()
 router.register(r'usuario', crudUsuarioViewSet, basename='crudUsuarioViewSet')
